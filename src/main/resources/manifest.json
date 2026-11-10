@@ -1,0 +1,11 @@
+{
+  "Group": "jaredscarito",
+  "Name": "hyMMO",
+  "Version": "1.1.5",
+  "Description": "Skill levels, a skill tree, and timed abilities in the style of mcMMO.",
+  "IncludesAssetPack": true,
+  "Authors": [
+    { "Name": "Axeex" }
+  ],
+  "Main": "com.jaredscarito.hymmo.HyMmoPlugin"
+}

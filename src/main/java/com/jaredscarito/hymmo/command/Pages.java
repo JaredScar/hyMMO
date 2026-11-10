@@ -1,0 +1,24 @@
+package com.jaredscarito.hymmo.command;
+
+import com.hypixel.hytale.component.Ref;
+import com.hypixel.hytale.component.Store;
+import com.hypixel.hytale.server.core.entity.entities.Player;
+import com.hypixel.hytale.server.core.universe.PlayerRef;
+import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
+import com.jaredscarito.hymmo.service.SkillService;
+import com.jaredscarito.hymmo.skill.Skill;
+import com.jaredscarito.hymmo.ui.SkillTreePage;
+
+final class Pages {
+    private Pages() {
+    }
+
+    static void skills(SkillService skills, Store<EntityStore> store, Ref<EntityStore> ref, PlayerRef player, Skill selected) {
+        Player entity = store.getComponent(ref, Player.getComponentType());
+        if (entity == null) {
+            skills.overview(player);
+            return;
+        }
+        entity.getPageManager().openCustomPage(ref, store, new SkillTreePage(player, skills, selected));
+    }
+}
